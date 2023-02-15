@@ -26,4 +26,18 @@ class UtilsUnitTest {
 
         assertEquals(result, "http://coba.com?lang=id")
     }
+
+    @Test
+    fun createURL_debug () {
+        val result = createURL(url = "http://coba.com", debug = true)
+
+        assertEquals(result, "http://coba.com?debug=true")
+    }
+
+    @Test
+    fun createURL_visibility () {
+        val result = createURL(url = "http://coba.com", visibility = false)
+
+        assertEquals(result, "http://coba.com?visibility=false")
+    }
 }
