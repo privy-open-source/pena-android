@@ -15,7 +15,7 @@ allprojects {
 2. Add the dependency
 ```gradle
 dependencies {
-  implementation 'com.github.privy-open-source:pena-android:0.1.0'
+  implementation 'dev.privyid:pena-android:0.1.0'
 }
 ```
 
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         val pena = findViewById<Pena>(R.id.pena)
         pena.openDoc(
-            url = "http://192.168.1.13:5173",
+            url = "http://sign.document.com/doc/xxx",
             signature = Placement(
                 x = 100,
                 y = 200,
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onAfterMessage(payload: Payload) {
         if (payload.action == "sign")
-          Toast.makeText(this, "Signed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Signed", Toast.LENGTH_SHORT).show()
     }
 }
 ```
