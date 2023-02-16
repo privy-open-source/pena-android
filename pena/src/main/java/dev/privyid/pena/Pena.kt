@@ -14,12 +14,7 @@ class Pena : WebView {
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     private var hook: HookFn? = null
-
-    init {
-        this.settings.domStorageEnabled = true
-        this.settings.javaScriptEnabled = true
-        this.addJavascriptInterface(PenaAndroid(this::onMessage), "PenaAndroid")
-    }
+    private val bridge: PenaAndroid = PenaAndroid(this::onMessage)
 
     /**
      * Create signing document
@@ -42,6 +37,10 @@ class Pena : WebView {
     ) {
         if (onAfterAction != null)
             this.hook = onAfterAction
+
+        this.settings.domStorageEnabled = true
+        this.settings.javaScriptEnabled = true
+        this.addJavascriptInterface(this.bridge, "PenaAndroid")
 
         this.loadUrl(
             createURL(
