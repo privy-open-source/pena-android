@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'dev.privyid.pena'
+    namespace 'dev.privyid'
     compileSdk 33
 
     defaultConfig {
@@ -38,6 +38,12 @@ android {
         }
         unitTests.all {
             jvmArgs '-noverify'
+        }
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
         }
     }
 }
