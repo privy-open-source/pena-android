@@ -29,7 +29,7 @@ dependencies {
 1. Add Pena in your layout file
 
 ```xml
-  <dev.privyid.Pena
+  <dev.privyid.pena.Pena
     android:id="@+id/pena"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -39,9 +39,9 @@ dependencies {
 2. And handle on your Activity
 
 ```kt
-import dev.privyid.Payload
-import dev.privyid.Pena
-import dev.privyid.Placement
+import dev.privyid.pena.Payload
+import dev.privyid.pena.Pena
+import dev.privyid.pena.Placement
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
