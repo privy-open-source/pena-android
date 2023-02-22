@@ -57,11 +57,11 @@ class MainActivity : AppCompatActivity() {
                 page = 1,
                 fixed = true,
             ),
-            onAfterAction = this::onAfterMessage,
+            onAfterAction = this::onAfterAction,
         )
     }
 
-    private fun onAfterMessage(payload: Payload) {
+    private fun onAfterAction(payload: Payload) {
         if (payload.action == "sign")
             Toast.makeText(this, "Signed", Toast.LENGTH_SHORT).show()
     }
