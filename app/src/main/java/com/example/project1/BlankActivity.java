@@ -30,7 +30,8 @@ public class BlankActivity extends AppCompatActivity {
     }
 
     private Unit onAfterAction(Payload payload) {
-        Toast.makeText(this, payload.getAction(), Toast.LENGTH_SHORT).show();
+        if (payload.getAction().equals("sign"))
+            Toast.makeText(this, payload.getAction(), Toast.LENGTH_SHORT).show();
 
         return null;
     }

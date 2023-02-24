@@ -1,5 +1,10 @@
 # Pena 💚 Android
 
+> Pena plugin for Android
+
+## Requirement
+- Min SDK >= 30
+
 ## Installation
 
 1. Add the JitPack repository to your `build.gradle` file.
@@ -52,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         val pena = findViewById<Pena>(R.id.pena)
         pena.openDoc(
-            url = "http://sign.document.com/doc/xxx",
+            url = "https://sign.document.com/doc/xxx",
             lang = "en",
             signature = Placement(
                 x = 100,
@@ -89,16 +94,17 @@ public class MainActivity extends AppCompatActivity {
 
         Pena pena = findViewById(R.id.pena);
         pena.openDoc(
-                new PenaDocument("http://sign.document.com/doc/xxx")
+                new PenaDocument("https://sign.document.com/doc/xxx")
                         .setLang("en")
-                        .setSignature(new Placement(100, 200, 1, false))
+                        .setSignature(new Placement(100, 200, 1, true))
                         .setOnAfterAction(this::onAfterAction)
                         
         );
     }
 
     private Unit onAfterAction(Payload payload) {
-        Toast.makeText(this, payload.getAction(), Toast.LENGTH_SHORT).show();
+        if (payload.getAction().equals("sign"))
+            Toast.makeText(this, "Signed", Toast.LENGTH_SHORT).show();
 
         return null;
     }
