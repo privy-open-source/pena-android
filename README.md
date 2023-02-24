@@ -38,6 +38,8 @@ dependencies {
 
 2. And handle on your Activity
 
+**Kotlin**
+
 ```kt
 import dev.privyid.pena.Payload
 import dev.privyid.pena.Pena
@@ -51,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         val pena = findViewById<Pena>(R.id.pena)
         pena.openDoc(
             url = "http://sign.document.com/doc/xxx",
+            lang = "en",
             signature = Placement(
                 x = 100,
                 y = 200,
@@ -64,6 +67,40 @@ class MainActivity : AppCompatActivity() {
     private fun onAfterAction(payload: Payload) {
         if (payload.action == "sign")
             Toast.makeText(this, "Signed", Toast.LENGTH_SHORT).show()
+    }
+}
+```
+
+**Java**
+
+```java
+import dev.privyid.pena.Payload;
+import dev.privyid.pena.Pena;
+import dev.privyid.pena.PenaDocument;
+import dev.privyid.pena.Placement;
+import kotlin.Unit;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Pena pena = findViewById(R.id.pena);
+        pena.openDoc(
+                new PenaDocument("http://sign.document.com/doc/xxx")
+                        .setLang("en")
+                        .setSignature(new Placement(100, 200, 1, false))
+                        .setOnAfterAction(this::onAfterAction)
+                        
+        );
+    }
+
+    private Unit onAfterAction(Payload payload) {
+        Toast.makeText(this, payload.getAction(), Toast.LENGTH_SHORT).show();
+
+        return null;
     }
 }
 ```

@@ -14,18 +14,19 @@ class MainActivity : AppCompatActivity() {
 
         val pena = findViewById<Pena>(R.id.pena)
         pena.openDoc(
-            url = "http://192.168.1.13:5173",
-            onAfterAction = this::onAfterMessage,
+            url = "http://sign.document.com/doc/xxx",
+            lang = "en",
             signature = Placement(
                 x = 100,
                 y = 200,
                 page = 1,
                 fixed = true,
-            )
+            ),
+            onAfterAction = this::onAfterAction,
         )
     }
 
-    private fun onAfterMessage(payload: Payload) {
+    private fun onAfterAction(payload: Payload) {
         Toast.makeText(this, payload.action, Toast.LENGTH_SHORT).show()
     }
 }

@@ -16,6 +16,18 @@ class Pena : WebView {
     private var hook: HookFn? = null
     private val bridge: PenaAndroid = PenaAndroid(this::onMessage)
 
+    fun openDoc (doc: PenaDocument) {
+        this.openDoc(
+            url = doc.url,
+            privyId = doc.privyId,
+            visibility = doc.visibility,
+            debug = doc.debug,
+            lang = doc.lang,
+            signature = doc.signature,
+            onAfterAction = doc.onAfterAction,
+        )
+    }
+
     /**
      * Create signing document
      * @param url Document URL
