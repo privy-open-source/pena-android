@@ -1,6 +1,6 @@
 # Pena 💚 Android
 
-> Pena plugin for Android
+> PrivyID's Official Client Integration Library for Android.
 
 ## Requirement
 - Min SDK >= 30
