@@ -40,6 +40,7 @@ fun createURL(
     debug: Boolean? = null,
     lang: String? = null,
     signature: Placement? = null,
+    needScrollTo: Any? = null
 ): String {
     val uri = Uri.parse(url).buildUpon()
 
@@ -60,6 +61,10 @@ fun createURL(
         uri.appendQueryParameter("y", signature.y.toString())
         uri.appendQueryParameter("page", signature.page.toString())
         uri.appendQueryParameter("fixed", b2s(signature.fixed))
+    }
+
+    if (needScrollTo != null) {
+        uri.appendQueryParameter("need_scrollto", needScrollTo.toString())
     }
 
     return uri.build().toString()

@@ -17,6 +17,8 @@ public class PenaDocument {
     @Nullable
     private Placement signature;
     @Nullable
+    private Object needScrollTo;
+    @Nullable
     private Function1<Payload, Unit> onAfterAction;
 
     public PenaDocument(String url) {
@@ -89,6 +91,22 @@ public class PenaDocument {
 
     public PenaDocument setOnAfterAction(Function1<Payload, Unit> onAfterAction) {
         this.onAfterAction = onAfterAction;
+
+        return this;
+    }
+
+    public String getNeedScrollTo () {
+        return this.needScrollTo.toString();
+    }
+
+    public PenaDocument setNeedScrollTo (Number needScrollTo) {
+        this.needScrollTo = needScrollTo;
+
+        return this;
+    }
+
+    public PenaDocument setNeedScrollTo (String needScrollTo) {
+        this.needScrollTo = needScrollTo;
 
         return this;
     }

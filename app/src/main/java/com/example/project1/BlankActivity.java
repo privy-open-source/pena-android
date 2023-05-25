@@ -24,8 +24,9 @@ public class BlankActivity extends AppCompatActivity {
                         .setPrivyId("UAT001")
                         .setLang("en")
                         .setSignature(new Placement(100, 200, 1, false))
+                        .setNeedScrollTo(1)
+                        .setNeedScrollTo("last")
                         .setOnAfterAction(this::onAfterAction)
-
         );
     }
 

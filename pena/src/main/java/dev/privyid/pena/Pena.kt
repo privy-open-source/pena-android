@@ -24,6 +24,7 @@ class Pena : WebView {
             debug = doc.debug,
             lang = doc.lang,
             signature = doc.signature,
+            needScrollTo = doc.needScrollTo,
             onAfterAction = doc.onAfterAction,
         )
     }
@@ -45,6 +46,7 @@ class Pena : WebView {
         debug: Boolean? = false,
         lang: String? = null,
         signature: Placement? = null,
+        needScrollTo: Any? = null,
         onAfterAction: HookFn? = null,
     ) {
         if (onAfterAction != null)
@@ -61,6 +63,7 @@ class Pena : WebView {
                 privyId = privyId,
                 signature = signature,
                 visibility = visibility,
+                needScrollTo = needScrollTo,
                 debug = debug,
             )
         )

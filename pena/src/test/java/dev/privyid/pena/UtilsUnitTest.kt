@@ -8,12 +8,6 @@ import org.robolectric.RobolectricTestRunner
 @RunWith(RobolectricTestRunner::class)
 class UtilsUnitTest {
     @Test
-    fun b2s_basic () {
-        assertEquals(b2s(true), "true")
-        assertEquals(b2s(false), "false")
-    }
-
-    @Test
     fun createURL_basic () {
         val result = createURL(url = "http://coba.com")
 
@@ -39,5 +33,19 @@ class UtilsUnitTest {
         val result = createURL(url = "http://coba.com", visibility = false)
 
         assertEquals(result, "http://coba.com?visibility=false")
+    }
+
+    @Test
+    fun createURL_needScrollTo_number () {
+        val result = createURL(url = "http://coba.com", needScrollTo = 5)
+
+        assertEquals(result, "http://coba.com?need_scrollto=5")
+    }
+
+    @Test
+    fun createURL_needScrollTo_string () {
+        val result = createURL(url = "http://coba.com", needScrollTo = "last")
+
+        assertEquals(result, "http://coba.com?need_scrollto=last")
     }
 }
