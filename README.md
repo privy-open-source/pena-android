@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         .setLang("en")
                         .setSignature(new Placement(100, 200, 1, true))
                         .setOnAfterAction(this::onAfterAction)
-                        
+
         );
     }
 
@@ -113,19 +113,20 @@ public class MainActivity extends AppCompatActivity {
 
 ## Options
 
-| Options         | Type      | Default | Description                                                                                                  |
-|-----------------|-----------|:-------:|--------------------------------------------------------------------------------------------------------------|
-| `url`           | String    |    -    | **(Required)** Document's url                                                                                |
-| `lang`          | String    |  `en`   | Set language, valid value is `en` or `id`                                                                    |
-| `visibility`    | Boolean   | `true`  | Set signature visibility                                                                                     |
-| `privyId`       | String    |    -    | Set recipient's privyId                                                                                      |
-| `signature`     | Placement |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document |
-| ├ `x`           | Number    |    -    | X Coordinate                                                                                                 |
-| ├ `y`           | Number    |    -    | Y Coordinate                                                                                                 |
-| ├ `page`        | Number    |    -    | Target page                                                                                                  |
-| └ `fixed`       | Boolean   | `false` | Disabled signature for moving                                                                                |
-| `debug`         | Boolean   | `false` | Enable debug mode                                                                                            |
-| `onAfterAction` | Function  |    -    | After action hook                                                                                            |
+| Options         | Type             | Default | Description                                                                                                                                  |
+|-----------------|------------------|:-------:|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `url`           | String           |    -    | **(Required)** Document's url                                                                                                                |
+| `lang`          | String           |  `en`   | Set language, valid value is `en` or `id`                                                                                                    |
+| `visibility`    | Boolean          | `true`  | Set signature visibility                                                                                                                     |
+| `privyId`       | String           |    -    | Set recipient's privyId                                                                                                                      |
+| `signature`     | Placement        |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document                                 |
+| ├ `x`           | Number           |    -    | X Coordinate                                                                                                                                 |
+| ├ `y`           | Number           |    -    | Y Coordinate                                                                                                                                 |
+| ├ `page`        | Number           |    -    | Target page                                                                                                                                  |
+| └ `fixed`       | Boolean          | `false` | Disabled signature for moving                                                                                                                |
+| `debug`         | Boolean          | `false` | Enable debug mode                                                                                                                            |
+| `needScrollTo`  | Number \| String |    -    | Force user to scroll to target page before doing an action (sign,review,etc). Valid value is a number, or set `last` to target the last page |
+| `onAfterAction` | Function         |    -    | After action hook                                                                                                                            |
 
 ## License
 
