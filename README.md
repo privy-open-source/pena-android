@@ -20,7 +20,7 @@ allprojects {
 2. Add the dependency
 ```gradle
 dependencies {
-  implementation 'dev.privyid:pena-android:0.2.0'
+  implementation 'dev.privyid:pena-android:1.0.0'
 }
 ```
 
