@@ -69,17 +69,3 @@ fun createURL(
 
     return uri.build().toString()
 }
-
-fun extractDomain(url: Uri): String? {
-    val host = url.host
-    val pattern = Regex("""(?:.*\.)?([^.]+\.[^.]+)$""")
-
-    return host?.let { pattern.find(it)?.groupValues?.get(1) }
-}
-
-fun isSameDomain(a: Uri, b: Uri): Boolean {
-    val domainA = extractDomain(a)
-    val domainB = extractDomain(b)
-
-    return domainA != null && domainB != null && domainA == domainB
-}

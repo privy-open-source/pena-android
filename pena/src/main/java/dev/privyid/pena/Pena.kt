@@ -54,7 +54,7 @@ class Pena : WebView {
 
         this.settings.domStorageEnabled = true
         this.settings.javaScriptEnabled = true
-        this.webViewClient = PenaWebClient(url)
+        this.webViewClient = PenaWebClient()
         this.addJavascriptInterface(this.bridge, "PenaAndroid")
 
         this.loadUrl(
