@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         val pena = findViewById<Pena>(R.id.pena)
         pena.openDoc(
-            url = "http://sign.document.com/doc/xxx",
+//            url = "https://fe-public-sdk-sign.carstensz.privydev.id/magic-link/f25e2ec651028ac7e828a8a30c84c883",
+            url = "https://sdk-sign-web.dev.privydev.id/doc/fca0f79911bf506c5c2228b95a67e316758a6ed3b97c7d3d82be3c1bdcabf3b6",
+//            url = "https://sdk-sign-web.dev.privydev.id/doc/sign/62353330613961363533303262653239326135313439323566643132326633346532623137643365626633366138323334346263643734316635323938343662-b2c7aa3f4663cc3a753ca75a56bf80c2e702fd4474aa7c3e673d568d6ac2a8a7-1",
             lang = "en",
             signature = Placement(
                 x = 100,

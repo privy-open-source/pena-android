@@ -16,7 +16,7 @@ class Pena : WebView {
     private var hook: HookFn? = null
     private val bridge: PenaAndroid = PenaAndroid(this::onMessage)
 
-    fun openDoc (doc: PenaDocument) {
+    fun openDoc(doc: PenaDocument) {
         this.openDoc(
             url = doc.url,
             privyId = doc.privyId,
@@ -54,6 +54,7 @@ class Pena : WebView {
 
         this.settings.domStorageEnabled = true
         this.settings.javaScriptEnabled = true
+        this.webViewClient = PenaWebClient(url)
         this.addJavascriptInterface(this.bridge, "PenaAndroid")
 
         this.loadUrl(
