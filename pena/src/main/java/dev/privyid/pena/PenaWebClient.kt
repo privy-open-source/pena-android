@@ -1,19 +1,11 @@
 package dev.privyid.pena
 
-import android.net.Uri
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-class PenaWebClient(url: String) : WebViewClient() {
-    private var url: Uri = Uri.parse(url)
-
+class PenaWebClient() : WebViewClient() {
     override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-        if (request != null) {
-            if (isSameDomain(this.url, request.url))
-                return false
-        }
-
-        return true
+        return request == null || (request.url.scheme != "http" && request.url.scheme != "https")
     }
 }
