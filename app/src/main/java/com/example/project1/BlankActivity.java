@@ -26,6 +26,7 @@ public class BlankActivity extends AppCompatActivity {
                         .setSignature(new Placement(100, 200, 1, false))
                         .setNeedScrollTo(1)
                         .setNeedScrollTo("last")
+                        .setVisibility(false)
                         .setOnAfterAction(this::onAfterAction)
         );
     }

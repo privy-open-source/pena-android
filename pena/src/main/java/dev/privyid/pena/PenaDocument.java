@@ -1,11 +1,12 @@
 package dev.privyid.pena;
 
 import org.jetbrains.annotations.Nullable;
+
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
 public class PenaDocument {
-    private String url;
+    private final String url;
     @Nullable
     private String privyId;
     @Nullable
@@ -22,25 +23,19 @@ public class PenaDocument {
     private Function1<Payload, Unit> onAfterAction;
 
     public PenaDocument(String url) {
-        this.setUrl(url);
+        this.url = url;
     }
 
-    public Function1<Payload, Unit> getOnAfterAction() {
-        return onAfterAction;
-    }
 
     public String getUrl() {
-        return url;
+
+        return this.url;
     }
 
-    public PenaDocument setUrl(String url) {
-        this.url = url;
-
-        return this;
-    }
-
+    @Nullable
     public String getPrivyId() {
-        return privyId;
+
+        return this.privyId;
     }
 
     public PenaDocument setPrivyId(String privyId) {
@@ -49,7 +44,9 @@ public class PenaDocument {
         return this;
     }
 
+    @Nullable
     public Boolean getVisibility() {
+
         return visibility;
     }
 
@@ -59,8 +56,10 @@ public class PenaDocument {
         return this;
     }
 
+    @Nullable
     public Boolean getDebug() {
-        return debug;
+
+        return this.debug;
     }
 
     public PenaDocument setDebug(Boolean debug) {
@@ -69,8 +68,10 @@ public class PenaDocument {
         return this;
     }
 
+    @Nullable
     public String getLang() {
-        return lang;
+
+        return this.lang;
     }
 
     public PenaDocument setLang(String lang) {
@@ -79,8 +80,10 @@ public class PenaDocument {
         return this;
     }
 
+    @Nullable
     public Placement getSignature() {
-        return signature;
+
+        return this.signature;
     }
 
     public PenaDocument setSignature(Placement signature) {
@@ -89,23 +92,34 @@ public class PenaDocument {
         return this;
     }
 
+    @Nullable
+    public Function1<Payload, Unit> getOnAfterAction() {
+
+        return this.onAfterAction;
+    }
+
     public PenaDocument setOnAfterAction(Function1<Payload, Unit> onAfterAction) {
         this.onAfterAction = onAfterAction;
 
         return this;
     }
 
-    public String getNeedScrollTo () {
-        return this.needScrollTo.toString();
+    @Nullable
+    public String getNeedScrollTo() {
+        if (this.needScrollTo != null) {
+            return this.needScrollTo.toString();
+        }
+
+        return null;
     }
 
-    public PenaDocument setNeedScrollTo (Number needScrollTo) {
+    public PenaDocument setNeedScrollTo(Number needScrollTo) {
         this.needScrollTo = needScrollTo;
 
         return this;
     }
 
-    public PenaDocument setNeedScrollTo (String needScrollTo) {
+    public PenaDocument setNeedScrollTo(String needScrollTo) {
         this.needScrollTo = needScrollTo;
 
         return this;
